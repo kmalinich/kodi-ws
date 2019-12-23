@@ -10,7 +10,7 @@ const url = 'plugin://plugin.video.youtube/?action=play_video&videoid=' + videoI
 /* Utility function to delay async execution */
 function sleep(ms) {
 	return new Promise(res => {
-		setTimeout(function() {
+		setTimeout(() => {
 			res();
 		}, ms);
 	});
@@ -32,9 +32,9 @@ async function main() {
 	/* Stop all players, then start the video */
 	await stopAllActivePlayers(con);
 	await con.Player.Open({
-		item: {
-			file: url
-		}
+		item : {
+			file : url,
+		},
 	});
 
 	/* Stop the video after 20 seconds */
@@ -45,9 +45,10 @@ async function main() {
 /* Run the thing */
 main().catch(e => {
 	/* Handle errors */
-	if(e.stack) {
+	if (e.stack) {
 		console.error(e.stack);
-	} else {
+	}
+	else {
 		console.error(e);
 	}
 }).then(() => {

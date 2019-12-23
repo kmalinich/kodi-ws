@@ -4,7 +4,7 @@ import kodi from '../';
 /* Utility function to delay async execution */
 function sleep(ms) {
 	return new Promise(res => {
-		setTimeout(function() {
+		setTimeout(() => {
 			res();
 		}, ms);
 	});
@@ -27,9 +27,10 @@ async function main() {
 /* Run the thing */
 main().catch(e => {
 	/* Handle errors */
-	if(e.stack) {
+	if (e.stack) {
 		console.error(e.stack);
-	} else {
+	}
+	else {
 		console.error(e);
 	}
 }).then(() => {

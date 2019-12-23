@@ -11,8 +11,8 @@ async function main() {
 	console.log(JSON.stringify(players));
 
 	/* Log the currently played item for all players */
-	for(let player of players) {
-		let item = await con.Player.GetItem(player.playerid);
+	for (const player of players) {
+		const item = await con.Player.GetItem(player.playerid);
 		console.log('Currently played for player[' + player.playerid + ']:');
 		console.log(JSON.stringify(item));
 	}
@@ -21,9 +21,10 @@ async function main() {
 /* Run the thing */
 main().catch(e => {
 	/* Handle errors */
-	if(e.stack) {
+	if (e.stack) {
 		console.error(e.stack);
-	} else {
+	}
+	else {
 		console.error(e);
 	}
 }).then(() => {

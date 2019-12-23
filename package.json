@@ -1,34 +1,39 @@
 {
-  "name": "kodi-ws",
-  "version": "2.4.3",
-  "main": "lib/kodi-ws.js",
-  "author": "Florian Albertz",
-  "contributors": [
-    "Links 2004",
-    "Bram van Oploo"
-  ],
-  "license": "BSD-3-Clause",
-  "description": "A wrapper for the kodi jsonrpc interface",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/PaulAvery/kodi-ws.git"
-  },
-  "keywords": [
-    "kodi",
-    "jsonrpc",
-    "json-rpc"
-  ],
-  "scripts": {
-    "test": "make lint"
-  },
-  "dependencies": {
-    "has-value": "^0.2.0",
-    "jrpc-schema": "^2.1.0",
-    "set-value": "^0.2.0",
-    "ws": "^1.1.1"
-  },
-  "devDependencies": {
-    "eslint": "^1.9.0",
-    "babel-eslint": "^5.0.0-beta8"
-  }
+	"author": "Florian Albertz",
+	"contributors": [
+		"Links 2004",
+		"Bram van Oploo"
+	],
+	"dependencies": {
+		"has-value": "^2.0.2",
+		"jrpc-schema": "^2.1.0",
+		"set-value": "^3.0.1",
+		"ws": "^7.2.1"
+	},
+	"description": "A wrapper for the kodi jsonrpc interface",
+	"devDependencies": {
+		"babel-eslint": "^10.0.3",
+		"eslint": "^6.8.0",
+		"eslint-config-esnext": "^4.0.0",
+		"eslint-plugin-import": "^2.19.1",
+		"eslint-plugin-node": "^10.0.0",
+		"eslint-plugin-promise": "^4.2.1",
+		"eslint-plugin-standard": "^4.0.1"
+	},
+	"keywords": [
+		"kodi",
+		"jsonrpc",
+		"json-rpc"
+	],
+	"license": "BSD-3-Clause",
+	"main": "lib/kodi-ws.js",
+	"name": "kodi-ws",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/kmalinich/kodi-ws.git"
+	},
+	"scripts": {
+		"test": "make lint"
+	},
+	"version": "2.4.3"
 }
