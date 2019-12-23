@@ -1,4 +1,4 @@
-const Connection = require('./Connection');
+const Connection = require('./lib/Connection');
 
 
 function connect(host, port) {

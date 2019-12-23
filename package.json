@@ -26,7 +26,7 @@
 		"json-rpc"
 	],
 	"license": "BSD-3-Clause",
-	"main": "lib/kodi-ws.js",
+	"main": "index.js",
 	"name": "kodi-ws",
 	"repository": {
 		"type": "git",

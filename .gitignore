@@ -1,3 +1,14 @@
-node_modules
-compiled.js
-nbproject
+*.bak
+*.log
+*.swo
+*.swp
+._*
+.DS_Store
+
+/*.json
+
+/test*.js
+
+/log/
+/node_modules/
+/test/

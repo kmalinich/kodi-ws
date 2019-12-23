@@ -1,1 +1,4 @@
-examples
+/doc
+/examples
+/test
+/test.js
