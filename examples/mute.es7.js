@@ -1,30 +1,32 @@
-/* Import the module */
+// Import the module
 import kodi from '../';
 
-/* Utility function to delay async execution */
+
+// Utility function to delay async execution
 function sleep(ms) {
 	return new Promise(resolve => {
 		setTimeout(resolve, ms);
 	});
 }
 
-/* Main logic */
+
+// Main logic
 async function main() {
 	const con = await kodi('127.0.0.1', 9090);
 
-	/* Mute kodi */
+	// Mute kodi
 	await con.Application.SetMute(true);
 
-	/* Wait 2,5 seconds */
+	// Wait 2.5 seconds
 	await sleep(2500);
 
-	/* Unmute kodi */
+	// Unmute kodi
 	await con.Application.SetMute(false);
 }
 
-/* Run the thing */
+// Run the thing
 main().catch(e => {
-	/* Handle errors */
+	// Handle errors
 	if (e.stack) {
 		console.error(e.stack);
 	}
@@ -32,6 +34,6 @@ main().catch(e => {
 		console.error(e);
 	}
 }).then(() => {
-	/* Finally exit this process */
+	// Finally exit this process
 	process.exit();
 });

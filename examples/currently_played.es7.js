@@ -1,16 +1,17 @@
-/* Import the module */
+// Import the module
 import kodi from '../';
 
-/* Main logic */
+
+// Main logic
 async function main() {
 	const con = await kodi('127.0.0.1', 9090);
 
-	/* Get all active players and log them */
+	// Get all active players and log them
 	const players = await con.Player.GetActivePlayers();
 	console.log('Active players:');
 	console.log(JSON.stringify(players));
 
-	/* Log the currently played item for all players */
+	// Log the currently played item for all players
 	for (const player of players) {
 		const item = await con.Player.GetItem(player.playerid);
 		console.log('Currently played for player[' + player.playerid + ']:');
@@ -18,9 +19,10 @@ async function main() {
 	}
 }
 
-/* Run the thing */
+
+// Run the thing
 main().catch(e => {
-	/* Handle errors */
+	// Handle errors
 	if (e.stack) {
 		console.error(e.stack);
 	}
@@ -28,6 +30,6 @@ main().catch(e => {
 		console.error(e);
 	}
 }).then(() => {
-	/* Finally exit this process */
+	// Finally exit this process
 	process.exit();
 });
