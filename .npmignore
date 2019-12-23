@@ -1,4 +1,8 @@
 /doc
 /examples
+
 /test
 /test.js
+
+/.eslintignore
+/.eslintrc.json
