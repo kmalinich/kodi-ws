@@ -2,8 +2,8 @@
 const kodi = require('../');
 
 kodi('127.0.0.1', 9090).then((connection) =>
-	/* Get all active players and log them */
-	 connection.Player.GetActivePlayers().then((players) => {
+/* Get all active players and log them */
+	connection.Player.GetActivePlayers().then((players) => {
 		console.log('Active players:');
 		console.log(JSON.stringify(players));
 
@@ -14,7 +14,7 @@ kodi('127.0.0.1', 9090).then((connection) =>
 		})));
 	})
 ).catch((e) => {
-	/* Handle errors */
+/* Handle errors */
 	if (e.stack) {
 		console.error(e.stack);
 	}
@@ -22,6 +22,6 @@ kodi('127.0.0.1', 9090).then((connection) =>
 		console.error(e);
 	}
 }).then(() => {
-	/* Finally exit this process */
+/* Finally exit this process */
 	process.exit();
 });

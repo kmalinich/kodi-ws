@@ -4,11 +4,11 @@ const kodi = require('../');
 /* Instantiate the connection and wait */
 kodi('127.0.0.1', 9090).then((connection) =>
 	/* Mute */
-	 connection.Application.SetMute(true).then(() =>
+	connection.Application.SetMute(true).then(() =>
 		/* Unmute 2,5 seconds later */
-		 new Promise((res, rej) => {
+		new Promise((resolve, reject) => {
 			setTimeout(() => {
-				connection.Application.SetMute(false).then(res, rej);
+				connection.Application.SetMute(false).then(resolve, reject);
 			}, 2500);
 		})
 	)

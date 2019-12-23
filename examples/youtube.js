@@ -11,21 +11,21 @@ const url = 'plugin://plugin.video.youtube/?action=play_video&videoid=' + videoI
 function stopAllActivePlayers(connection) {
 	return connection.Player.GetActivePlayers().then((players) =>
 		/* Stop everything thats playing */
-		 Promise.all(players.map((player) => connection.Player.Stop(player.playerid)))
+		Promise.all(players.map((player) => connection.Player.Stop(player.playerid)))
 	);
 }
 
 /* Connect to instance */
 kodi('127.0.0.1', 9090).then((connection) => stopAllActivePlayers(connection).then(() =>
-/* Start the video */
-		 connection.Player.Open({
+	/* Start the video */
+	connection.Player.Open({
 		item : {
 			file : url,
 		},
 	})
 ).then(() =>
-/* Stop the video after 20 seconds */
-		 new Promise((resolve, reject) => {
+	/* Stop the video after 20 seconds */
+	new Promise((resolve, reject) => {
 		setTimeout(() => {
 			stopAllActivePlayers(connection).then(resolve, reject);
 		}, 20000);

@@ -9,10 +9,8 @@ const url = 'plugin://plugin.video.youtube/?action=play_video&videoid=' + videoI
 
 /* Utility function to delay async execution */
 function sleep(ms) {
-	return new Promise(res => {
-		setTimeout(() => {
-			res();
-		}, ms);
+	return new Promise(resolve => {
+		setTimeout(resolve, ms);
 	});
 }
 
@@ -20,9 +18,7 @@ function sleep(ms) {
 async function stopAllActivePlayers(con) {
 	const players = await con.Player.GetActivePlayers();
 
-	await Promise.all(players.map(player => {
-		con.Player.Stop(player.playerid);
-	}));
+	await Promise.all(players.map(player => con.Player.Stop(player.playerid)));
 }
 
 /* Main logic */

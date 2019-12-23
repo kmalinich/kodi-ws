@@ -3,10 +3,8 @@ import kodi from '../';
 
 /* Utility function to delay async execution */
 function sleep(ms) {
-	return new Promise(res => {
-		setTimeout(() => {
-			res();
-		}, ms);
+	return new Promise(resolve => {
+		setTimeout(resolve, ms);
 	});
 }
 
